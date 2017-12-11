@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Configurações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Linguagem</ion-label>
+    <ion-select [(ngModel)]="linguagem">
+      <ion-option *ngFor="let language of languages.languages" value="{{ language.language }}">{{ language.name }}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-content>
+
+<ion-footer padding>
+  <button ion-button block>Salvar</button>
+</ion-footer>

@@ -1,0 +1,21 @@
+<ion-content padding>
+  <h1 text-center class="titulo">
+    Global Talk
+    <ion-icon name="globe"></ion-icon>
+  </h1>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button (click)="entrar()" ion-button block>Entrar</button>
+  </div>
+</ion-content>

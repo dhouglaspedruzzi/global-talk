@@ -1,0 +1,40 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ contato_atual.nome }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let mensagem of mensagens | async ">
+      <ion-item-group class="speech-bubble">
+        <p *ngIf="mensagem.de != usuario_logado.email" class="triangle-right left" text-left item-start>
+        {{ mensagem.mensagem }}
+        </p>
+        <p *ngIf="mensagem.de == usuario_logado.email" class="triangle-right right" text-right item-end>
+        {{ mensagem.mensagem }}
+        </p>
+      </ion-item-group>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer padding>
+  <ion-list>
+    <ion-item item-start>
+      <ion-input clearInput type="text" placeholder="Digite Sua Mensagem" [(ngModel)]="textoEnvio"></ion-input>
+      <button item-right ion-button (click)="enviar()">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-footer>
